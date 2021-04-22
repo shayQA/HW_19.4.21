@@ -1,0 +1,70 @@
+package com.company;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
+
+public class Main {
+
+    //2
+    public static void print_half_size(String check)
+    {
+        System.out.println(check.substring(0,check.length()/2));
+    }
+
+    //3
+    public static void printHalf(String check)
+    {
+        if(check==null)
+            print_half_size(check);
+        System.out.println(check.substring(0,check.length()/2));
+    }
+
+    public static void main(String[] args) {
+
+        //0
+     //main difference between RuntimeException and checked Exception is that It is mandatory
+        // to provide try-catch or try finally block to handle checked Exception and failure to
+        // do so will result in compile-time error, while in case of RuntimeException this is not mandatory.
+
+        //1
+        /*
+        try {
+            String check = null;
+            print_half_size(check);
+            //Exception in thread "main" java.lang.NullPointerException: Cannot invoke "String.length()" because "check" is null
+        }
+        catch(Exception e)
+        {
+            throw new RuntimeException("Cannot take in an empty String or null value.");
+        }
+         */
+
+        //2
+        /*
+        try {
+            String check1 = "something";
+            printHalf(check1);
+        }
+        catch(Exception e)
+        {
+            throw new RuntimeException("Cannot take in an empty String or null value.");
+        }
+
+         */
+
+        MyIndexer my_indexer = new MyIndexer();
+        //3- method 2 gives exception from class
+
+        try {
+            String check1 =null;
+            my_indexer.check_string_if_null(check1);
+
+        }
+        catch(WrongHalfStringInput e)
+        {
+            System.out.println(e);
+        }
+        }
+        }
