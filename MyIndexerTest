@@ -1,0 +1,29 @@
+package com.company;
+import static junit.framework.TestCase.assertEquals;
+import org.junit.Test;
+
+public class MyIndexerTest {
+
+    // legitimate input
+    @Test
+    public void myIndexer_getElement_positive_flow() {
+        // arrange
+        MyIndexer my_indexer = new MyIndexer();
+        String check="something";
+        // act
+        String elem = my_indexer.getElement(check);
+        // assert
+        assertEquals(check, elem);
+    }
+
+    // null string test
+    @Test (expected = WrongHalfStringInput.class)
+    public void myIndexer_get_WrongHalfStringInput() {
+        // arrange
+        MyIndexer my_indexer = new MyIndexer();
+        String check=null;
+
+        // act
+        my_indexer.check_string_if_null(check);
+    }
+}
