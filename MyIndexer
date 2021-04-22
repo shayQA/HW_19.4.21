@@ -1,0 +1,16 @@
+package com.company;
+
+public class MyIndexer {
+
+    public String getElement (String check)
+    {
+        return check;
+    }
+
+    public void check_string_if_null(String check)
+    {
+        if(check==null)
+            throw new WrongHalfStringInput("This string cannot get null values.");
+    }
+
+}
